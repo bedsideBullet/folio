@@ -11,7 +11,7 @@
     <title>folio</title>
 </head>
 <body>
-   <div class="theme-panel open">
+   <div class="theme-panel">
     <div class="theme-body">
         <span>Change Theme</span>
         <div class="btn-group">
@@ -40,7 +40,7 @@
         </header>
 
         <!-- Hero Section -->
-        <section class="hero-bg ">
+        <section class="hero-bg" data-theme="light">
             <div class="container">
                 <div class="hero-content">
                     <div class="code-icon">
@@ -57,25 +57,25 @@
                 </div>
             </div>
         </section>
-        <section class="container portfolio-section"></section>
-            <div class="search-container">
+        <section class="portfolio-section">
+            <div class="container search-container">
                 <label for="search">
                     <input autocomplete="off" id="search" type="text" class="search-input" placeholder="Search...">
                     <i class="fas fa-search"></i>
                 </label>
                 <ul class="portfolio-filter-nav ul-defaults-none">
-                    <li class="filter-link active">All Work</li>
-                    <li class="filter-link">Web Development</li>
-                    <li class="filter-link">App Development</li>
-                    <li class="filter-link">UI Design</li>
+                    <li data-filter="all" class="filter-link active">All Work</li>
+                    <li data-filter="web" class="filter-link">Web Development</li>
+                    <li data-filter="app" class="filter-link">App Development</li>
+                    <li data-filter="ui" class="filter-link">UI Design</li>
                 </ul>
             </div>
 
             <div class="portfolio-grid">
-
-                <div class="portfolio-card">
+ 
+                <div class="portfolio-card" data-item="web">
                     <div class="card-body">
-                        <img src="" alt="portfolio icon">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
                         <a href="#" class="card-popup-box">
                             <div>Web Development</div>
                             <h3>Food Website</h3>
@@ -83,9 +83,80 @@
                     </div>
                 </div>
 
+                <div class="portfolio-card" data-item="web">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="web">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="ui">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="app">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="app">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="app">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-item="ui">
+                    <div class="card-body">
+                        <img src="./week8imageassets/imageAssets/portfolio-1.jpg" alt="portfolio icon">
+                        <a href="#" class="card-popup-box">
+                            <div>Web Development</div>
+                            <h3>Food Website</h3>
+                        </a>
+                    </div>
+                </div>
+
+
             </div>
 
-
+        </section>
 
 <!-- Modals -->
 <!-- About page modal -->
