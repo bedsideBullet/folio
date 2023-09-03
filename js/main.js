@@ -105,7 +105,7 @@ for (const link of filterLink) {
   });
 }
 
-// Full site modal "open buttons"
+// Modal/Full site modal "open buttons"
 for (const elm of openModal) {
   elm.addEventListener("click", function () {
     const modalId = this.dataset.open;
@@ -115,6 +115,21 @@ for (const elm of openModal) {
 
 for (const elm of closeModal) {
   elm.addEventListener("click", function () {
-    this.parentElement.parentElement.classList.remove(isVisible);
+    this.parentElement.parentElement.parentElement.classList.remove(isVisible);
   });
 }
+
+// Modal
+document.addEventListener("click", (e) => {
+  console.log(e.target, document.querySelector(".modal.is-visible"));
+  if (e.target === document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove(isVisible);
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  console.log(e.key);
+  if (e.key === "Escape") {
+    document.querySelector(".modal.is-visible").classList.remove(isVisible);
+  }
+});

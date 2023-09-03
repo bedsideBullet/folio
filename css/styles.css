@@ -175,7 +175,7 @@
     color: #495fef;
 }
 
-.portfolio-grid, #portfolio-container {
+.portfolio-grid {
     display: flex;
     flex-wrap: wrap;
     padding: 3rem 1rem;
@@ -224,6 +224,7 @@
 .portfolio-card:hover .card-popup-box {
     bottom: 20px;
     opacity: 1;
+    cursor: pointer;
 }
 
 .card-popup-box div {
@@ -256,6 +257,15 @@
     text-transform: lowercase;
 }
 
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.modal,
 .full-site-modal {
     position: fixed;
     top: 0;
@@ -266,7 +276,19 @@
     transition: all 0.35s ease-in;
     visibility: hidden;
     opacity: 0;
-} 
+    z-index: 1000;
+}
+
+.modal-dialog {
+    max-width: 800px;
+    max-height: 80vh;
+    background: var(--bg-panel);
+    color: var(--color-text-base);
+    overflow: hidden;
+    padding: 1.25rem 1.85rem;
+    border-radius: 5px;
+    cursor: default;
+}
 
 .modal-header {
     display: flex;
@@ -279,12 +301,17 @@
     transition: all 0.5s ease-in;
 }
 
+.modal-dialog .modal-header h3 {
+    color: var(--color-text-base);
+}
+
 .modal-header .fa-times:hover {
     transform: scale(1.3);
     cursor: pointer;
 }
 
-.full-site-modal.is-visible {
+.full-site-modal.is-visible,
+.modal.is-visible {
     visibility: visible;
     opacity: 1;
 }
@@ -294,10 +321,41 @@
     align-items: center;
 }
 
+.modal-body .img-wrapper {
+    max-width: 200px;
+    margin-right: 0.75rem;
+}
+
+.modal-body .img-wrapper img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 200px;
+}
+
 [data-animation="zoomInOut"].full-site-modal {
     transform: scale(0.2);
 }
 
-[data-animation="zoomInOut"].full-site-modal.is-visible {
+[data-animation='slideInOutTop'].modal-dialog {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+
+[data-animation='slideInOutTop'].is-visible .modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* [data-animation='slideInOutTop'].modal-dialog {
+    transform: translateY(-100%);
+} */
+
+[data-animation="zoomInOut"].full-site-modal.is-visible,
+[data-animation='slideInOutTop'].is-visible .modal-dialog {
     transform: none;
 }
+
+
